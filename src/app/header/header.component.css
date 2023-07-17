@@ -1,0 +1,29 @@
+header {
+  height: 60px;
+  padding: 0 10px;
+  background-color: whitesmoke;
+  border-bottom: 1px solid #e72929;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  padding: 20px;
+  text-decoration: none;
+  color: #af1313;
+}
+
+a:hover {
+  color: white;
+  background-color: red;
+}
+
+.logo {
+  font-weight: bold;
+  padding: 1em;
+}
+
+nav {
+  display: flex;
+}

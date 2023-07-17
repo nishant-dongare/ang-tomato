@@ -1,0 +1,19 @@
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+img {
+  height: 10rem;
+  width: 18rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1px;
+  margin: 0.5rem;
+  overflow: hidden;
+  color: red;
+}
+img:hover {
+  opacity: 0.9;
+}
