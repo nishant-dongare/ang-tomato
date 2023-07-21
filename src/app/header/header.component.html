@@ -1,8 +1,21 @@
 <header class="container">
-  <a href="#" routerLink="/" class="logo">Tomato</a>
+  <a routerLink="/" class="logo">Tomato</a>
   <nav>
-    <a href="#" routerLink="/">Cart</a>
-    <a href="#" routerLink="/">Cart</a>
-    <a href="#" routerLink="/">Cart</a>
+    <ul>
+      <li>
+        <a routerLink="/login">Login</a>
+      </li>
+      <li class="menu-container">
+        <a routerLink="/dashboard">Dawn</a>
+        <div class="menu">
+          <a routerLink="/profile">Profile</a>
+          <a routerLink="/orders">Orders</a>
+          <a routerLink="/logout">Logout</a>
+        </div>
+      </li>
+      <li>
+        <a routerLink="/cart-page">Cart<span>3</span></a>
+      </li>
+    </ul>
   </nav>
 </header>

@@ -6,10 +6,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, RouterModule],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    MatIconModule,
+    NoopAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
