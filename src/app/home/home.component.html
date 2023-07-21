@@ -6,11 +6,17 @@
         <div class="name">
           {{ food.name }}
         </div>
-        <span class="favorite {{ food.favorite ? '' : 'not' }}"> ❤ </span>
+        <span class="favorite {{ food.favorite ? '' : 'not' }}">❤</span>
         <div class="stars">
           <span
+            *ngFor="let i of starArray"
             class="material-icons"
-            style="color: rgb(255, 0, 0); -webkit-text-stroke-width: 5px"
+            style="
+              color: red;
+              margin-right: 5px;
+              -webkit-text-stroke-width: 5px;
+            "
+            [ngStyle]="{ color: food.stars >= i ? 'red' : 'black' }"
             >star</span
           >
         </div>

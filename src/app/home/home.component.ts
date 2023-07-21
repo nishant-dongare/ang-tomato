@@ -9,9 +9,10 @@ import { Food } from '../shared/models/Food';
 })
 export class HomeComponent {
   foods: Food[] = [];
+  starArray: number[] = [1, 2, 3, 4, 5];
   constructor(private fs: FoodService) {}
 
-  // ngOnInit() {
-  //   this.foods = this.fs.getAll();
-  // }
+  ngOnInit() {
+    this.foods = this.fs.getAll();
+  }
 }
