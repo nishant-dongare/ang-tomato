@@ -9,9 +9,10 @@ import { RouterModule } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
+import { TagsComponent } from './components/tags/tags.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent, TagsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
