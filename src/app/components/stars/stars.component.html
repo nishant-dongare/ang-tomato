@@ -1,0 +1,9 @@
+<div>
+  <span
+    *ngFor="let i of starArray"
+    class="material-icons"
+    style="color: red; margin-right: 5px; -webkit-text-stroke-width: 5px"
+    [ngStyle]="{ color: count >= i ? 'red' : 'black' }"
+    >star</span
+  >
+</div>
