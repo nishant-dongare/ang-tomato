@@ -18,3 +18,12 @@ img {
 img:hover {
   opacity: 0.9;
 }
+
+.favorite {
+  color: #e72929;
+  font-size: 1.6rem;
+}
+
+.favorite.not {
+  color: gray;
+}

@@ -18,4 +18,6 @@ export class FoodPageComponent {
       }
     });
   }
+
+  addToCart(): void {}
 }

@@ -8,10 +8,8 @@
         <div class="name">
           {{ food.name }}
         </div>
-        <i
-          class="material-icons favorite{{ food.favorite ? '' : 'not' }}"
-          color="red"
-          >favorite</i
+        <mat-icon class="favorite{{ food.favorite ? '' : 'not' }}"
+          >favorite</mat-icon
         >
         <app-stars [count]="food.stars" />
         <div class="product-item-footer">
