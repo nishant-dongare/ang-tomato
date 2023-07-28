@@ -12,11 +12,7 @@ export class CartService {
     totalPrice: 0,
     totalCount: 0,
   };
-  private cart = signal<Cart>(this.getCartFromStorage());
-
-  getCart(): Cart {
-    return this.cart();
-  }
+  cart = signal<Cart>(this.getCartFromStorage());
 
   addToCart(food: Food): void {
     let cartItem = this.cart().items.find((item) => item.food.id === food.id);
@@ -28,9 +24,11 @@ export class CartService {
   }
 
   removeFromCart(foodId: string): void {
-    this.cart.mutate((value) =>
-      value.items.filter((item) => item.food.id != foodId)
+    this.cart.mutate(
+      (value) =>
+        (value.items = value.items.filter((item) => item.food.id != foodId))
     );
+    // console.log(this.cart().items.filter((item) => item.food.id != foodId));
     this.storeCart();
   }
 
