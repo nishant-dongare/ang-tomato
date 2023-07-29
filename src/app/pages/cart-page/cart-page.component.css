@@ -53,13 +53,31 @@ li select {
   font-weight: 100;
 }
 
+.quantity {
+  display: flex;
+  justify-content: space-around;
+  min-width: 1rem;
+}
+
+.quantity button {
+  font: 1em sans-serif;
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
+  background-color: red;
+  opacity: 0.8;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+}
+
 li .remove-button {
   border-radius: 10px;
   color: whitesmoke;
   background-color: red;
   border: none;
   padding: 0.5rem;
-  opacity: 0.7;
+  opacity: 0.8;
   outline: none;
 }
 
@@ -112,7 +130,7 @@ li .remove-button:hover {
   display: block;
   border-radius: 1rem;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.8;
   justify-self: center;
 }
 

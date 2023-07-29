@@ -33,10 +33,11 @@ export class CartService {
   }
 
   changeQuantity(foodId: string, quantity: number): void {
-    let cartItem = this.cart().items.find((item) => item.food.id != foodId);
+    let cartItem = this.cart().items.find((item) => item.food.id == foodId);
     if (!cartItem) return;
     cartItem.quantity = quantity;
     cartItem.price = quantity * cartItem.food.price;
+    console.log('Service : ' + cartItem.quantity);
     this.storeCart();
   }
 

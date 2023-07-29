@@ -11,7 +11,7 @@ export class HeaderComponent {
   constructor(cartService: CartService) {
     effect(() => {
       this.cartQuantity = cartService.cart().totalCount;
-      console.log();
+      // console.log();
     });
   }
 }
