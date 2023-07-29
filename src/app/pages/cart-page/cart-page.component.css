@@ -55,14 +55,14 @@ li select {
 
 .quantity {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  min-width: 1rem;
 }
 
 .quantity button {
   font: 1em sans-serif;
-  width: 1.5em;
-  height: 1.5em;
+  width: 2em;
+  height: 2em;
   color: white;
   background-color: red;
   opacity: 0.8;

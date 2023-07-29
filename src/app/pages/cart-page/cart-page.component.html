@@ -1,4 +1,9 @@
 <app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="Cart is Empty"
+  resetLinkText="Go To HomePage"
+/>
 <div *ngIf="cart && cart.items.length" class="container">
   <ul>
     <li *ngFor="let cartItem of cart.items">
@@ -11,19 +16,10 @@
         </a>
       </div>
       <div class="quantity">
-        <!-- <select
-          #quantitySelect
-          [value]="cartItem.quantity"
-          (change)="changeQuantity(cartItem, quantitySelect.value)"
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select> -->
         <button (click)="changeQuantity(cartItem, false)">−</button>
-        <p style="min-width: 3px">{{ cartItem.quantity }}</p>
+        <p style="width: 2em; flex-shrink: 0; text-align: center">
+          {{ cartItem.quantity }}
+        </p>
         <button (click)="changeQuantity(cartItem, true)">+</button>
       </div>
       <div>

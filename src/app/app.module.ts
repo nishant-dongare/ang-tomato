@@ -14,6 +14,7 @@ import { FoodPageComponent } from './pages/food-page/food-page.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/title/title.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TitleComponent } from './components/title/title.component';
     StarsComponent,
     CartPageComponent,
     TitleComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
