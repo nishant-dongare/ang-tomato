@@ -14,7 +14,7 @@ export class HomeComponent {
     activatedRoute.params.subscribe((params) => {
       if (params['searchTerm']) {
         this.foods = this.fs.getAllFoodsBySearchTerm(params['searchTerm']);
-      } else if (params['tag']) {
+      } else if (params['tag'] && params['tag'] != 'All') {
         this.foods = this.fs.getAllFoodByTag(params['tag']);
       } else {
         this.foods = this.fs.getAll();
