@@ -1,4 +1,4 @@
-import { Injectable, Signal, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Cart } from '../shared/models/Cart';
 import { Food } from '../shared/models/Food';
 import { CartItem } from '../shared/models/CartItem';
