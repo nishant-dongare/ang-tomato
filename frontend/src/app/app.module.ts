@@ -15,6 +15,7 @@ import { StarsComponent } from './components/stars/stars.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/title/title.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RouterModule,
     MatIconModule,
     NoopAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

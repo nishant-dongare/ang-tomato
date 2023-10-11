@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { sample_foods } from "./data";
+import { sample_foods, sample_tags } from "./data";
 
 const app = express();
 app.use(cors({ credentials: true, origin: ["http://localhost:4200"] }));
@@ -11,6 +11,32 @@ app.get("/", (req, res) => {
 
 app.get("/api/foods", (req, res) => {
   res.send(sample_foods);
+});
+
+app.get("/api/foods/search/:searchTerm", (req, res) => {
+  const searchTerm = req.params.searchTerm;
+  const foods = sample_foods.filter((food: any) =>
+    food.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  res.send(foods);
+});
+
+app.get("/api/foods/tag", (req, res) => {
+  res.send(sample_tags);
+});
+
+app.get("/api/foods/tag/:tagName", (req, res) => {
+  const tagName = req.params.tagName;
+  const foods = sample_foods.filter((food: any) =>
+    food.tags?.includes(tagName)
+  );
+  res.send(foods);
+});
+
+app.get("/api/foods/:foodId", (req, res) => {
+  const foodId = req.params.foodId;
+  const food = sample_foods.find((food: any) => food.id === foodId);
+  res.send(food);
 });
 
 const port = 5000;
