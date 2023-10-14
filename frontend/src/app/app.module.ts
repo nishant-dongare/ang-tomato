@@ -16,6 +16,8 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/title/title.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     NoopAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
