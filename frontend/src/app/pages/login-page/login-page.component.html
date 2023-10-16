@@ -1,13 +1,13 @@
 <div class="container">
-  <form [formGroup]="form">
+  <form [formGroup]="loginForm">
     <h2>Login</h2>
     <!-- <app-title title="Login" /> -->
     <div>
       <p>Email</p>
-      <input type="email" name="email" />
-      <div class="gap"></div>
+      <input type="email" name="email" formControlName="email" />
+      <div style="margin: 2rem 0"></div>
       <p>Password</p>
-      <input type="password" name="password" />
+      <input type="password" name="password" formControlName="password" />
     </div>
     <button>Submit</button>
   </form>
