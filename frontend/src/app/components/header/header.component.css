@@ -36,6 +36,7 @@ ul {
 .menu-container {
   position: relative;
 }
+
 .menu-container:hover .menu {
   display: block;
 }
