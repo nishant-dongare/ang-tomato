@@ -7,7 +7,9 @@ export const sample_foods: any[] = [
     favorite: false,
     origins: ["italy"],
     stars: 4.5,
-    imageUrl: "assets/food-1.jpg",
+    // imageUrl: "assets/food-1.jpg",
+    imageUrl:
+      "https://github.com/nishant-dongare/ang-tomato/blob/master/frontend/src/assets/food1.jpg?raw=true",
     tags: ["FastFood", "Pizza", "Lunch"],
   },
   {
@@ -18,7 +20,9 @@ export const sample_foods: any[] = [
     favorite: true,
     origins: ["persia", "middle east", "china"],
     stars: 4.7,
-    imageUrl: "assets/food-2.jpg",
+    // imageUrl: "assets/food-2.jpg",
+    imageUrl:
+      "https://github.com/nishant-dongare/ang-tomato/blob/master/frontend/src/assets/food2.jpg?raw=true",
     tags: ["SlowFood", "Lunch"],
   },
   {
@@ -29,7 +33,9 @@ export const sample_foods: any[] = [
     favorite: false,
     origins: ["germany", "us"],
     stars: 3.5,
-    imageUrl: "assets/food-3.jpg",
+    // imageUrl: "assets/food-3.jpg",
+    imageUrl:
+      "https://github.com/nishant-dongare/ang-tomato/blob/master/frontend/src/assets/food3.jpg?raw=true",
     tags: ["FastFood", "Hamburger"],
   },
   {
@@ -40,7 +46,9 @@ export const sample_foods: any[] = [
     favorite: true,
     origins: ["belgium", "france"],
     stars: 3.3,
-    imageUrl: "assets/food-4.jpg",
+    // imageUrl: "assets/food-4.jpg",
+    imageUrl:
+      "https://github.com/nishant-dongare/ang-tomato/blob/master/frontend/src/assets/food4.jpg?raw=true",
     tags: ["FastFood", "Fry"],
   },
   {
@@ -51,7 +59,9 @@ export const sample_foods: any[] = [
     favorite: false,
     origins: ["india", "asia"],
     stars: 3.0,
-    imageUrl: "assets/food-5.jpg",
+    // imageUrl: "assets/food-5.jpg",
+    imageUrl:
+      "https://github.com/nishant-dongare/ang-tomato/blob/master/frontend/src/assets/food5.jpg?raw=true",
     tags: ["SlowFood", "Soup"],
   },
   {
@@ -62,7 +72,9 @@ export const sample_foods: any[] = [
     favorite: false,
     origins: ["italy"],
     stars: 4.0,
-    imageUrl: "assets/food-6.jpg",
+    // imageUrl: "assets/food-6.jpg",
+    imageUrl:
+      "https://github.com/nishant-dongare/ang-tomato/blob/master/frontend/src/assets/food6.jpg?raw=true",
     tags: ["FastFood", "Pizza", "Lunch"],
   },
 ];
