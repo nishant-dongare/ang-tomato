@@ -1,5 +1,7 @@
 import { Component, effect } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/shared/models/User';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,12 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class HeaderComponent {
   cartQuantity: number = 0;
-  constructor(cartService: CartService) {
+  user!: User;
+
+  constructor(cartService: CartService, private userService: UserService) {
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
+    });
     effect(() => {
       this.cartQuantity = cartService.cart().totalCount;
       // console.log();

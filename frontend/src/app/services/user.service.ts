@@ -19,14 +19,14 @@ export class UserService {
 
   login(userLogin: IUserLogin): Observable<User> {
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
-      tap((user) => {
-        this.userSubject.next(user);
-        this.toastrService.success(
-          `Welcome to TOMATO ${user.name}`,
-          'Login Successful'
-        );
-      }),
       tap({
+        next: (user) => {
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Welcome to TOMATO ${user.name}`,
+            'Login Successful'
+          );
+        },
         error: (errorResponse) => {
           this.toastrService.error(errorResponse.error, 'Login Failed');
         },
