@@ -6,7 +6,7 @@
 }
 
 form {
-  border: 2px solid red;
+  border: 2px solid #e72929;
   border-radius: 10px;
   padding: 3rem;
 }
@@ -32,12 +32,17 @@ input {
 }
 
 button {
+  background-color: #e72929;
   height: 2.5rem;
   width: 5rem;
   margin: 2rem auto;
   display: block;
   border-radius: 10px;
   border: none;
-  color: brown;
+  color: white;
   font: 1em sans-serif;
+}
+
+.error-list {
+  color: red;
 }
