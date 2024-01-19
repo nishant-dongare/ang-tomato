@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "TomatoApplication",
+      "request": "launch",
+      "mainClass": "dn.spring.tomato.TomatoApplication",
+      "projectName": "tomato"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",

@@ -14,7 +14,7 @@
     </div>
     <app-stars [count]="food.stars" />
     <div class="origins">
-      <span *ngFor="let origin of food.origins">
+      <span *ngFor="let origin of food.origins.split(',')">
         {{ origin }}
       </span>
     </div>

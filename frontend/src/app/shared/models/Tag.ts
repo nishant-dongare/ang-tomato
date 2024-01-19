@@ -1,4 +1,7 @@
+import { Food } from './Food';
+
 export class Tag {
-  name!: string;
-  count!: number;
+  id!: number;
+  tagname!: string;
+  items!: Food[];
 }

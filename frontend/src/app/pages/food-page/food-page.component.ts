@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { state } from 'src/app/services/data';
 import { FoodService } from 'src/app/services/food/food.service';
 import { Food } from 'src/app/shared/models/Food';
 
@@ -20,9 +21,10 @@ export class FoodPageComponent {
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id']) {
-        foodService.getFoodById(params['id']).subscribe((serverFood) => {
-          this.food = serverFood;
-        });
+        var f = state().find((item) => item.id == params['id']);
+        if (f != undefined) {
+          this.food = f;
+        }
       }
     });
   }
