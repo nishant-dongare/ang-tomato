@@ -18,7 +18,6 @@ export class HeaderComponent {
     });
     effect(() => {
       this.cartQuantity = cartService.cart().totalCount;
-      // console.log();
     });
   }
 

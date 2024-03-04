@@ -32,7 +32,31 @@ export class UserService {
           );
         },
         error: (errorResponse) => {
-          this.toastrService.error(errorResponse.error, 'Login Failed');
+          this.toastrService.error(
+            errorResponse.error,
+            'Task Failed Successfully'
+          );
+        },
+      })
+    );
+  }
+
+  register(userLogin: IUserLogin): Observable<User> {
+    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
+      tap({
+        next: (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Welcome to TOMATO ${user.name}`,
+            'Register Successful'
+          );
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(
+            errorResponse.error,
+            'Task Failed Successfully'
+          );
         },
       })
     );

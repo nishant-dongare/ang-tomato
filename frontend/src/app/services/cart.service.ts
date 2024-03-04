@@ -37,7 +37,7 @@ export class CartService {
     if (!cartItem) return;
     cartItem.quantity = quantity;
     cartItem.price = quantity * cartItem.food.price;
-    console.log('Service : ' + cartItem.quantity);
+    // console.log('Service : ' + cartItem.quantity);
     this.storeCart();
   }
 

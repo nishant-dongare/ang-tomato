@@ -1,36 +1,43 @@
 <div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="submit()">
-    <h2>Login</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2>Register</h2>
     <div>
+      <p>Username</p>
+      <input type="text" name="username" formControlName="username" />
+      <div class="error-list" *ngIf="fc['username'].errors && isSubmitted">
+        <p *ngIf="fc['username'].errors['required']">
+          Username should not be Empty
+        </p>
+      </div>
+      <div style="margin: 2rem 0"></div>
       <p>Email</p>
       <input type="email" name="email" formControlName="email" />
       <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
-        <div *ngIf="fc['email'].errors['required']">
-          Email should not be Empty
-        </div>
+        <p *ngIf="fc['email'].errors['required']">Email should not be Empty</p>
         <div *ngIf="fc['email'].errors['email']">Email is Incorrect</div>
       </div>
       <div style="margin: 2rem 0"></div>
       <p>Password</p>
       <input type="password" name="password" formControlName="password" />
       <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
-        <div *ngIf="fc['password'].errors['required']">
+        <p *ngIf="fc['password'].errors['required']">
           Password should not be Empty
-        </div>
+        </p>
+        <p *ngIf="fc['password'].invalid">Password should not be less than 6</p>
       </div>
     </div>
     <div style="margin: 2rem 0"></div>
     <div class="buttons">
-      <button>Login</button>
+      <button>Register</button>
       <button
-        routerLink="/register"
+        routerLink="/login"
         style="
           background-color: whitesmoke;
           color: black;
           border: 1px gray solid;
         "
       >
-        Register
+        Login
       </button>
     </div>
   </form>

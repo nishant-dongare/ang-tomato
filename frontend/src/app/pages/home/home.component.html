@@ -9,12 +9,20 @@
     <a routerLink="/food/{{ food.id }}">
       <img [src]="food.imageUrl" [alt]="food.name" />
       <div class="content">
-        <div class="name">
-          {{ food.name }}
-        </div>
-        <mat-icon class="favorite{{ food.favorite ? '' : 'not' }}"
-          >favorite</mat-icon
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding-right: 5px;
+          "
         >
+          <div class="name">
+            {{ food.name }}
+          </div>
+          <mat-icon class="favorite{{ food.favorite ? '' : 'not' }}"
+            >favorite</mat-icon
+          >
+        </div>
         <app-stars [count]="food.stars" />
         <div class="product-item-footer">
           <div class="origins">

@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
     TitleComponent,
     NotFoundComponent,
     LoginPageComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
