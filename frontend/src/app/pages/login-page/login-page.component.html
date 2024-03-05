@@ -12,9 +12,9 @@
       </div>
       <div style="margin: 2rem 0"></div>
       <p>Password</p>
-      <input type="password" name="password" formControlName="password" />
-      <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
-        <div *ngIf="fc['password'].errors['required']">
+      <input type="passkey" name="passkey" formControlName="passkey" />
+      <div class="error-list" *ngIf="fc['passkey'].errors && isSubmitted">
+        <div *ngIf="fc['passkey'].errors['required']">
           Password should not be Empty
         </div>
       </div>

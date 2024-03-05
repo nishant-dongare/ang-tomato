@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      passkey: ['', Validators.required],
     });
     this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'];
   }
@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
       .login({
         username: '',
         email: this.fc['email'].value,
-        password: this.fc['password'].value,
+        passkey: this.fc['passkey'].value,
       })
       .subscribe(() => {
         this.router.navigateByUrl(this.returnUrl);

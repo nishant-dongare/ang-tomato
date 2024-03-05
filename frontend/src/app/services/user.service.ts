@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/models/User';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { IUserLogin } from '../shared/interfaces/IUserLogin';
+import { UserAuth } from '../shared/interfaces/UserAuth';
 import { HttpClient } from '@angular/common/http';
-import { USER_LOGIN_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 
 const USER_KEY = 'User';
@@ -20,10 +20,18 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
-  login(userLogin: IUserLogin): Observable<User> {
-    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
+  login(userAuth: UserAuth): Observable<User> {
+    console.log(userAuth.username, userAuth.email, userAuth.passkey);
+    console.log(
+      typeof userAuth.username,
+      typeof userAuth.email,
+      typeof userAuth.passkey
+    );
+    return this.http.post<User>(USER_LOGIN_URL, userAuth).pipe(
       tap({
         next: (user) => {
+          console.log(user);
+
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
@@ -41,8 +49,9 @@ export class UserService {
     );
   }
 
-  register(userLogin: IUserLogin): Observable<User> {
-    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
+  register(userAuth: UserAuth): Observable<User> {
+    console.log(userAuth.username, userAuth.email, userAuth.passkey);
+    return this.http.post<User>(USER_REGISTER_URL, userAuth).pipe(
       tap({
         next: (user) => {
           this.setUserToLocalStorage(user);

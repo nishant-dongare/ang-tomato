@@ -18,12 +18,12 @@
       </div>
       <div style="margin: 2rem 0"></div>
       <p>Password</p>
-      <input type="password" name="password" formControlName="password" />
-      <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
-        <p *ngIf="fc['password'].errors['required']">
+      <input type="passkey" name="passkey" formControlName="passkey" />
+      <div class="error-list" *ngIf="fc['passkey'].errors && isSubmitted">
+        <p *ngIf="fc['passkey'].errors['required']">
           Password should not be Empty
         </p>
-        <p *ngIf="fc['password'].invalid">Password should not be less than 6</p>
+        <p *ngIf="fc['passkey'].invalid">Password should not be less than 6</p>
       </div>
     </div>
     <div style="margin: 2rem 0"></div>

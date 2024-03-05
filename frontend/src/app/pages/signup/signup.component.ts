@@ -22,7 +22,7 @@ export class SignupComponent {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      passkey: ['', [Validators.required, Validators.minLength(6)]],
     });
     this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'];
   }
@@ -35,13 +35,16 @@ export class SignupComponent {
     this.isSubmitted = true;
     if (this.registerForm.invalid) return;
     else {
-      // Perform registration logic here
-      console.log('Registration successful!', this.registerForm.value);
+      // console.log(
+      //   'name: ' + this.fc['username'].value,
+      //   'email: ' + this.fc['email'].value,
+      //   'password: ' + this.fc['password'].value
+      // );
       this.userService
         .register({
           username: this.fc['username'].value,
           email: this.fc['email'].value,
-          password: this.fc['password'].value,
+          passkey: this.fc['passkey'].value,
         })
         .subscribe(() => {
           this.router.navigateByUrl(this.returnUrl);
