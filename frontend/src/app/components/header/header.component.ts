@@ -21,8 +21,8 @@ export class HeaderComponent {
     });
   }
 
-  get isAuth() {
-    return this.user.token;
+  get Auth() {
+    return this.user.name;
   }
 
   logout() {

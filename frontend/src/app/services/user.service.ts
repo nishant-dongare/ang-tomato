@@ -22,11 +22,6 @@ export class UserService {
 
   login(userAuth: UserAuth): Observable<User> {
     console.log(userAuth.username, userAuth.email, userAuth.passkey);
-    console.log(
-      typeof userAuth.username,
-      typeof userAuth.email,
-      typeof userAuth.passkey
-    );
     return this.http.post<User>(USER_LOGIN_URL, userAuth).pipe(
       tap({
         next: (user) => {
@@ -54,6 +49,7 @@ export class UserService {
     return this.http.post<User>(USER_REGISTER_URL, userAuth).pipe(
       tap({
         next: (user) => {
+          console.log(user);
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(

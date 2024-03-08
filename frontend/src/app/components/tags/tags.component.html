@@ -1,6 +1,13 @@
 <div *ngIf="tags">
-  <a *ngFor="let tag of tags" routerLink="/tag/{{ tag.id }}">
+  <a
+    *ngFor="let tag of tags"
+    routerLink="/tag/{{ tag.id }}"
+    [ngStyle]="{
+      color: selected == tag.id ? 'white' : '#d00202',
+      'background-color': selected == tag.id ? '#d00202' : ''
+    }"
+  >
     {{ tag.tagname }}
-    {{ tag.items.length }}
+    ({{ tag.products.length }})
   </a>
 </div>
