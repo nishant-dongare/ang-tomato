@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs';
 import { FoodService } from 'src/app/services/food/food.service';
 import { Tag } from 'src/app/shared/models/Tag';
 
@@ -10,7 +9,6 @@ import { Tag } from 'src/app/shared/models/Tag';
   styleUrls: ['./tags.component.css'],
 })
 export class TagsComponent implements OnInit {
-  [x: string]: any;
   tags?: Tag[];
   selected!: string | number;
   constructor(
