@@ -3,8 +3,6 @@ import { FoodService } from '../../services/food/food.service';
 import { Food } from '../../shared/models/Food';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { state } from 'src/app/services/data';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,7 +18,9 @@ export class HomeComponent {
       } else if (params['tag'] && params['tag'] != 'All') {
         this.fs
           .getFoodsByTag(params['tag'])
-          .subscribe((i) => (this.foods = i.products));
+          .subscribe((i) => (this.foods = i.productList));
+      } else if (fs.state().length !== 0) {
+        this.foods = fs.state();
       } else {
         foodsObservable = this.fs.getAll();
       }
@@ -28,7 +28,7 @@ export class HomeComponent {
       if (foodsObservable) {
         foodsObservable.subscribe((serverFoods) => {
           if (serverFoods) {
-            state.set(serverFoods);
+            fs.state.set(serverFoods);
             this.foods = serverFoods;
           }
         });

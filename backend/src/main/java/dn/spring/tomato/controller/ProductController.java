@@ -48,7 +48,7 @@ public class ProductController {
   public List<Product> getProductsBySearch(@PathVariable String param) {
     List<Product> plist = productService.getProductsBySearch(param);
     try {
-      plist.addAll(tagService.getTagByTagName(param).getProducts());
+      plist.addAll(tagService.getTagByTagName(param).getProductList());
     } catch (NullPointerException npe) {
     }
     return plist;

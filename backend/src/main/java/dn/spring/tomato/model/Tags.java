@@ -34,7 +34,7 @@ public class Tags {
   @JoinTable(name = "product_tags", joinColumns = {
       @JoinColumn(name = "tag_id", referencedColumnName = "id") }, inverseJoinColumns = {
           @JoinColumn(name = "product_id", referencedColumnName = "id") })
-  List<Product> products;
+  List<Product> productList;
 
   public Tags(String tagname) {
     this.tagname = tagname;

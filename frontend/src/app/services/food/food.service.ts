@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
   FOODS_BY_ID_URL,
@@ -15,9 +15,13 @@ import { Tag } from 'src/app/shared/models/Tag';
   providedIn: 'root',
 })
 export class FoodService {
+  state = signal<Food[]>([]);
+
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Food[]> {
+    console.log('Food.getAll');
+
     return this.http.get<Food[]>(FOODS_URL);
   }
 

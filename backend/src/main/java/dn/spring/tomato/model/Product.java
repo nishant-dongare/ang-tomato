@@ -37,7 +37,7 @@ public class Product {
   @JoinColumn(name = "userId")
   private User user;
 
-  @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
+  @ManyToMany(mappedBy = "productList", cascade = CascadeType.ALL)
   @JsonIgnore
   List<Tags> tags;
 

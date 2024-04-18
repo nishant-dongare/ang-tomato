@@ -13,11 +13,12 @@ export class HeaderComponent {
   user!: User;
 
   constructor(cartService: CartService, private userService: UserService) {
-    userService.userObservable.subscribe((newUser) => {
-      this.user = newUser;
-    });
     effect(() => {
       this.cartQuantity = cartService.cart().totalCount;
+    });
+
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
     });
   }
 

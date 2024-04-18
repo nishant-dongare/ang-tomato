@@ -71,12 +71,12 @@ public class AdminService {
                 lunch)));
 
     plist.forEach(p -> p.getTags().forEach(t -> {
-      List<Product> pl = t.getProducts();
+      List<Product> pl = t.getProductList();
       if (pl == null) {
         pl = new ArrayList<>();
       }
       pl.add(p);
-      t.setProducts(pl);
+      t.setProductList(pl);
     }));
 
     user.setProducts(plist);

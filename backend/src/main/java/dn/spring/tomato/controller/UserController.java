@@ -38,17 +38,12 @@ public class UserController {
   @PostMapping("/auth")
   public ResponseEntity<User> checkUser(@RequestBody UserAuth uauth) {
     User user = userService.getUserByEmailAndPass(uauth.email, uauth.passkey);
-    if (user == null)
-      return new ResponseEntity<User>(user, HttpStatus.BAD_REQUEST);
     return new ResponseEntity<User>(user, HttpStatus.ACCEPTED);
   }
 
   @PostMapping("/register")
   public ResponseEntity<User> registerUser(@RequestBody UserAuth uauth) {
-    System.out.println(uauth);
     User user = userService.saveUser(new User(uauth.getUsername(), uauth.getEmail(), uauth.getPasskey(), " "));
-    if (user == null)
-      return new ResponseEntity<User>(user, HttpStatus.BAD_REQUEST);
     return new ResponseEntity<User>(user, HttpStatus.ACCEPTED);
   }
 
@@ -66,8 +61,8 @@ public class UserController {
 
     List<Product> plist = List.of(p1, p2);
 
-    tags.get(0).setProducts(plist);
-    tags.get(1).setProducts(List.of(plist.get(1)));
+    tags.get(0).setProductList(plist);
+    tags.get(1).setProductList(List.of(plist.get(1)));
 
     u1.setProducts(plist);
 
