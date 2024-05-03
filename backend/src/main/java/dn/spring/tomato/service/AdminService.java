@@ -18,6 +18,10 @@ public class AdminService {
   @Autowired
   private AdminRepository adminRepository;
 
+  public Admin findUserInAdmin(String userId) {
+    return adminRepository.findUserInAdmin(userId);
+  }
+
   @PostConstruct
   public void defaultData() {
     Tags fastfood = new Tags("FastFood");

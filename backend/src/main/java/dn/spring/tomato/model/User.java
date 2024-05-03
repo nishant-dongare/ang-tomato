@@ -29,7 +29,7 @@ public class User {
   @Column(nullable = false, length = 20)
   private String name;
 
-  @Column(nullable = false, length = 15, unique = true)
+  @Column(nullable = false, unique = true)
   private String email;
 
   @Column(nullable = false, length = 12)
@@ -46,4 +46,11 @@ public class User {
     this.passkey = passkey;
     this.address = address;
   }
+
+  @Override
+  public String toString() {
+    return "User [id=" + id + ", name=" + name + ", email=" + email + ", passkey=" + passkey + ", address=" + address
+        + ", products=" + products + "]";
+  }
+
 }

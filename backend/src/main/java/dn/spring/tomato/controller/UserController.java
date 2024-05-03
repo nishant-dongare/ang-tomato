@@ -43,6 +43,7 @@ public class UserController {
 
   @PostMapping("/register")
   public ResponseEntity<User> registerUser(@RequestBody UserAuth uauth) {
+    System.out.println(uauth);
     User user = userService.saveUser(new User(uauth.getUsername(), uauth.getEmail(), uauth.getPasskey(), " "));
     return new ResponseEntity<User>(user, HttpStatus.ACCEPTED);
   }
@@ -90,6 +91,5 @@ public class UserController {
     public String toString() {
       return "UserAuth [username=" + username + ", email=" + email + ", passkey=" + passkey + "]";
     }
-
   }
 }

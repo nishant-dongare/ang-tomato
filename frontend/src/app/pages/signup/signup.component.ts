@@ -35,11 +35,6 @@ export class SignupComponent {
     this.isSubmitted = true;
     if (this.registerForm.invalid) return;
     else {
-      // console.log(
-      //   'name: ' + this.fc['username'].value,
-      //   'email: ' + this.fc['email'].value,
-      //   'password: ' + this.fc['password'].value
-      // );
       this.userService
         .register({
           username: this.fc['username'].value,

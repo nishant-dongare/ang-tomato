@@ -13,6 +13,10 @@ public class Admin {
   @Id
   private int id;
 
+  public int getId() {
+    return id;
+  }
+
   @OneToMany(cascade = CascadeType.ALL)
   List<User> users;
 

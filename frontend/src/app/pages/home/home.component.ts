@@ -11,10 +11,10 @@ import { Observable } from 'rxjs';
 export class HomeComponent {
   foods: Food[] = [];
   constructor(private fs: FoodService, activatedRoute: ActivatedRoute) {
-    let foodsObservable: Observable<Food[]>;
+    let foodList$: Observable<Food[]>;
     activatedRoute.params.subscribe((params) => {
       if (params['searchTerm']) {
-        foodsObservable = this.fs.getAllFoodsBySearchTerm(params['searchTerm']);
+        foodList$ = this.fs.getAllFoodsBySearchTerm(params['searchTerm']);
       } else if (params['tag'] && params['tag'] != 'All') {
         this.fs
           .getFoodsByTag(params['tag'])
@@ -22,11 +22,11 @@ export class HomeComponent {
       } else if (fs.state().length !== 0) {
         this.foods = fs.state();
       } else {
-        foodsObservable = this.fs.getAll();
+        foodList$ = this.fs.getAll();
       }
 
-      if (foodsObservable) {
-        foodsObservable.subscribe((serverFoods) => {
+      if (foodList$) {
+        foodList$.subscribe((serverFoods) => {
           if (serverFoods) {
             fs.state.set(serverFoods);
             this.foods = serverFoods;

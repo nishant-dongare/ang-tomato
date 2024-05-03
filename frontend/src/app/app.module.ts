@@ -23,6 +23,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     NotFoundComponent,
     LoginPageComponent,
     SignupComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

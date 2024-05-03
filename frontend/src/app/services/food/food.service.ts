@@ -20,8 +20,6 @@ export class FoodService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Food[]> {
-    console.log('Food.getAll');
-
     return this.http.get<Food[]>(FOODS_URL);
   }
 

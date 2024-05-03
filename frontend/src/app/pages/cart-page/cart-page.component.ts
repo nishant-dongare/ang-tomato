@@ -24,7 +24,7 @@ export class CartPageComponent {
       cartItem.food.id,
       change ? cartItem.quantity + 1 : cartItem.quantity - 1
     );
-    console.log(cartItem.quantity);
+    // console.log(cartItem.quantity);
     // console.log('Component : ' + cartItem.quantity);
   }
 }

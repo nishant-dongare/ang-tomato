@@ -15,8 +15,13 @@ public class UserService {
   private UserRepository userRepository;
 
   public User saveUser(User user) {
-    if (user == null)
-      throw new IllegalArgumentsException("User");
+
+    if (user == null || user.getName() == null || user.getEmail() == null || user.getPasskey() == null
+        || user.getName().isBlank()
+        || user.getEmail().isBlank() || user.getPasskey().isBlank()) {
+      throw new IllegalArgumentsException("User Registrations");
+    }
+
     return userRepository.save(user);
   }
 

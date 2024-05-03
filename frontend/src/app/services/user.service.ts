@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../shared/models/User';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { UserAuth } from '../shared/interfaces/UserAuth';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 
@@ -11,6 +11,10 @@ const USER_KEY = 'User';
   providedIn: 'root',
 })
 export class UserService {
+  headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+  
   private userSubject = new BehaviorSubject<User>(
     this.getUserFromLocalStorage()
   );
@@ -22,7 +26,7 @@ export class UserService {
 
   login(userAuth: UserAuth): Observable<User> {
     console.log(userAuth.username, userAuth.email, userAuth.passkey);
-    return this.http.post<User>(USER_LOGIN_URL, userAuth).pipe(
+    return this.http.post<User>(USER_LOGIN_URL,userAuth,{headers:this.headers}).pipe(
       tap({
         next: (user) => {
           console.log(user);
