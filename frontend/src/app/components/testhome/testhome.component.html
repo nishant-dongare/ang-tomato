@@ -1,0 +1,50 @@
+<ng-container *ngIf="(foodList$ | async) as foodList">
+<app-search />
+<app-tags />
+<app-not-found
+  [visible]="!foodList || !foodList.length"
+  resetLinkText="Reset Search"
+/>
+<ul>
+  <li *ngFor="let food of foodList">
+    <a routerLink="/food/{{ food.id }}">
+      <img [src]="food.imageUrl" [alt]="food.name" />
+      <div class="content">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            padding-right: 5px;
+          "
+        >
+          <div class="name">
+            {{ food.name }}
+          </div>
+          <mat-icon class="favorite{{ food.favorite ? '' : 'not' }}"
+            >favorite</mat-icon
+          >
+        </div>
+        <app-stars [count]="food.stars" />
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of food.origins.split(',')">
+              {{ origin }}
+            </span>
+          </div>
+
+          <div class="cook-time">
+            <span>🕒</span>
+            {{ food.cookTime }}
+          </div>
+        </div>
+
+        <div class="price">
+          <span>
+            {{ food.price | currency }}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+</ng-container>

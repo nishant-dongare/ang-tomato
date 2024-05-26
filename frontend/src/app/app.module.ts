@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { TestHomeComponent } from './components/testhome/testhome.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AdminComponent } from './pages/admin/admin.component';
     LoginPageComponent,
     SignupComponent,
     AdminComponent,
+    TestHomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ export class FoodPageComponent {
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id']) {
-        var f = foodService.state().find((item) => item.id == params['id']);
+        let f = foodService.state().find((item) => item.id == params['id']);
         if (f != undefined) {
           this.food = f;
         }

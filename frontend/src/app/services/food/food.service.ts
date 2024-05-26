@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import {
   FOODS_BY_ID_URL,
   FOODS_BY_SEARCH_URL,
@@ -15,12 +15,23 @@ import { Tag } from 'src/app/shared/models/Tag';
   providedIn: 'root',
 })
 export class FoodService {
+  private InitialFoodlist$!: Observable<Food[]>;
   state = signal<Food[]>([]);
-
+  flag:boolean = false;
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Food[]> {
-    return this.http.get<Food[]>(FOODS_URL);
+    if(this.InitialFoodlist$){
+      this.InitialFoodlist$.pipe(tap(arr=>{if(arr.length == 0){this.flag = true;}}))
+    }else{
+      this.flag=true;
+    }
+    
+    if(this.flag){
+      this.flag=!this.flag;
+      this.InitialFoodlist$=this.http.get<Food[]>(FOODS_URL);
+    }
+    return this.InitialFoodlist$;
   }
 
   getAllFoodsBySearchTerm(searchTerm: string) {
